@@ -1,7 +1,7 @@
 import {
   Code2, Smartphone, Layout, Server, Database, Boxes, Wrench, Users,
   MapPinned, Heart, Navigation, ShoppingBag, Dog, ShieldAlert,
-  FileText, Braces, ScrollText, FolderGit2, GraduationCap, TerminalSquare
+  FileText, Braces, ScrollText, FolderGit2, GraduationCap, TerminalSquare, Award
 } from "lucide-react";
 
 export const PROFILE = {
@@ -166,6 +166,7 @@ export const TABS = [
   { id: "experience", label: "experience.log", icon: ScrollText },
   { id: "projects", label: "projects/", icon: FolderGit2 },
   { id: "education", label: "education.yaml", icon: GraduationCap },
+  { id: "certifications", label: "certifications.md", icon: Award },
   { id: "contact", label: "contact.sh", icon: TerminalSquare },
 ];
 

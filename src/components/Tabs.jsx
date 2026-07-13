@@ -132,11 +132,6 @@ export function EducationTab() {
         </div>
       </div>
 
-      <div className="rc-subheading"><Award size={14} /> certifications</div>
-      <ul className="rc-cert-list">
-        {CERTIFICATIONS.map((c) => <li key={c}>{c}</li>)}
-      </ul>
-
       <div className="rc-subheading"><Star size={14} /> leadership &amp; activities</div>
       <div className="rc-leadership">
         {LEADERSHIP.map((l) => (
@@ -144,6 +139,25 @@ export function EducationTab() {
             <div className="rc-leadership-org">{l.org}</div>
             <div className="rc-leadership-role">{l.role}</div>
             <div className="rc-leadership-detail">{l.detail}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function CertificationsTab() {
+  return (
+    <div className="rc-fade">
+      <SectionHeader icon={Award} path="~/portfolio/" label="certifications.md" />
+      <div className="rc-cert-grid">
+        {CERTIFICATIONS.map((c) => (
+          <div key={c} className="rc-cert-card">
+            <div className="rc-cert-img-slot">
+              {/* certification image will go here */}
+              <Award size={28} />
+            </div>
+            <div className="rc-cert-name">{c}</div>
           </div>
         ))}
       </div>

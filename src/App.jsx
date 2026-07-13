@@ -7,7 +7,7 @@ import "./App.css";
 import { TABS, PROJECTS } from "./data/portfolioData";
 import { BootSequence } from "./components/BootSequence";
 import {
-  AboutTab, SkillsTab, ExperienceTab, ProjectsTab, EducationTab, ContactTab
+  AboutTab, SkillsTab, ExperienceTab, ProjectsTab, EducationTab, CertificationsTab, ContactTab
 } from "./components/Tabs";
 
 export default function App() {
@@ -31,6 +31,7 @@ export default function App() {
       case "experience": return <ExperienceTab />;
       case "projects": return <ProjectsTab />;
       case "education": return <EducationTab />;
+      case "certifications": return <CertificationsTab />;
       case "contact": return <ContactTab />;
       default: return null;
     }
