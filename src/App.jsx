@@ -7,7 +7,8 @@ import "./App.css";
 import { TABS, PROJECTS } from "./data/portfolioData";
 import { BootSequence } from "./components/BootSequence";
 import {
-  AboutTab, SkillsTab, ExperienceTab, ProjectsTab, EducationTab, CertificationsTab, ContactTab
+  AboutTab, SkillsTab, ExperienceTab, ProjectsTab, ProjectDetailTab,
+  EducationTab, CertificationsTab, ContactTab
 } from "./components/Tabs";
 
 export default function App() {
@@ -24,12 +25,33 @@ export default function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, [finishBoot]);
 
+  const openProject = useCallback((file) => {
+    setActiveTab(`project:${file}`);
+    setProjectsOpen(true);
+  }, []);
+
+  const isProjectDetail = activeTab.startsWith("project:");
+  const activeProjectFile = isProjectDetail ? activeTab.slice(8) : null;
+
+  const getTopbarLabel = () => {
+    if (isProjectDetail) return activeProjectFile;
+    return TABS.find(t => t.id === activeTab)?.label;
+  };
+
   const renderTab = () => {
+    if (isProjectDetail) {
+      return (
+        <ProjectDetailTab
+          projectFile={activeProjectFile}
+          onBack={() => setActiveTab("projects")}
+        />
+      );
+    }
     switch (activeTab) {
       case "about": return <AboutTab />;
       case "skills": return <SkillsTab />;
       case "experience": return <ExperienceTab />;
-      case "projects": return <ProjectsTab />;
+      case "projects": return <ProjectsTab onSelectProject={openProject} />;
       case "education": return <EducationTab />;
       case "certifications": return <CertificationsTab />;
       case "contact": return <ContactTab />;
@@ -49,7 +71,7 @@ export default function App() {
               <span className="rc-dot rc-dot-y" />
               <span className="rc-dot rc-dot-g" />
             </div>
-            <div className="rc-topbar-title">mahrukh-portfolio — {TABS.find(t => t.id === activeTab)?.label}</div>
+            <div className="rc-topbar-title">mahrukh-portfolio — {getTopbarLabel()}</div>
             <button
               className="rc-toggle"
               onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
@@ -98,7 +120,11 @@ export default function App() {
                     <FolderGit2 size={13} /> view all
                   </div>
                   {PROJECTS.map((p) => (
-                    <div key={p.file} className="rc-tree-item" onClick={() => setActiveTab("projects")}>
+                    <div
+                      key={p.file}
+                      className={`rc-tree-item ${activeTab === `project:${p.file}` ? "active" : ""}`}
+                      onClick={() => openProject(p.file)}
+                    >
                       <FileText size={13} /> {p.file}
                     </div>
                   ))}

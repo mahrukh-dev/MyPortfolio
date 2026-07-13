@@ -91,13 +91,13 @@ export function ExperienceTab() {
   );
 }
 
-export function ProjectsTab() {
+export function ProjectsTab({ onSelectProject }) {
   return (
     <div className="rc-fade">
       <SectionHeader icon={FolderGit2} path="~/portfolio/" label="projects/" />
       <div className="rc-projects-grid">
         {PROJECTS.map((p) => (
-          <div key={p.file} className="rc-project-card">
+          <div key={p.file} className="rc-project-card rc-project-card-clickable" onClick={() => onSelectProject?.(p.file)}>
             <div className="rc-project-file"><FileText size={13} /> {p.file}</div>
             <div className="rc-project-title"><p.icon size={18} /> {p.name}</div>
             <p className="rc-project-desc">{p.desc}</p>
@@ -108,6 +108,48 @@ export function ProjectsTab() {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+export function ProjectDetailTab({ projectFile, onBack }) {
+  const project = PROJECTS.find((p) => p.file === projectFile);
+  if (!project) return null;
+  const Icon = project.icon;
+
+  return (
+    <div className="rc-fade">
+      <SectionHeader icon={FolderGit2} path="~/portfolio/projects/" label={project.file} />
+
+      <button className="rc-back-btn" onClick={onBack}>
+        ← back to projects/
+      </button>
+
+      <div className="rc-detail-header">
+        <Icon size={28} className="rc-detail-icon" />
+        <h2 className="rc-detail-name">{project.name}</h2>
+      </div>
+
+      <div className="rc-code-block">
+        <div className="rc-comment"># description</div>
+        <p className="rc-summary">{project.desc}</p>
+      </div>
+
+      <div className="rc-detail-section">
+        <div className="rc-comment"># tech_stack</div>
+        <div className="rc-stack-row">
+          {project.stack.map((s) => <Pill key={s}>{s}</Pill>)}
+        </div>
+      </div>
+
+      {project.link && (
+        <div className="rc-detail-section">
+          <div className="rc-comment"># repository</div>
+          <a className="rc-detail-repo" href={`https://${project.link}`} target="_blank" rel="noreferrer">
+            <Github size={14} /> {project.link}
+          </a>
+        </div>
+      )}
     </div>
   );
 }

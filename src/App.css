@@ -268,6 +268,44 @@
 .rc-project-title { font-size: 15px; color: var(--accent-pink); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 600; }
 .rc-project-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.65; margin: 0 0 10px; }
 .rc-project-link { font-size: 11px; color: var(--accent-blue); display: flex; align-items: center; gap: 5px; margin-top: 6px; word-break: break-all; }
+.rc-project-card-clickable { cursor: pointer; }
+
+/* ---------- project detail ---------- */
+.rc-back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.rc-back-btn:hover { border-color: var(--accent-green); color: var(--accent-green); }
+.rc-detail-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.rc-detail-icon { color: var(--accent-pink); }
+.rc-detail-name {
+  font-family: var(--font-pixel);
+  font-size: clamp(16px, 3vw, 24px);
+  color: var(--accent-pink);
+  margin: 0;
+}
+.rc-detail-section { margin-bottom: 20px; }
+.rc-detail-repo {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-size: 13px;
+  margin-top: 6px;
+  transition: color .15s ease;
+}
+.rc-detail-repo:hover { color: var(--accent-green); }
 
 /* ---------- education / yaml ---------- */
 .rc-yaml-block { font-size: 13px; line-height: 2; margin-bottom: 28px; }
