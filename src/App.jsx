@@ -71,7 +71,7 @@ export default function App() {
               <span className="rc-dot rc-dot-y" />
               <span className="rc-dot rc-dot-g" />
             </div>
-            <div className="rc-topbar-title">mahrukh-portfolio — {getTopbarLabel()}</div>
+            <div className="rc-topbar-title">mah-rukh-portfolio — {getTopbarLabel()}</div>
             <button
               className="rc-toggle"
               onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
