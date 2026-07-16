@@ -11,6 +11,9 @@ import certAIForEveryone from '../assets/certificates/AIForEveryone_DeepLearning
 import certGettingStartedFlutter from '../assets/certificates/GettingStartedWithFlutterDevelopment_GoogleCloud_13March2023.jpg';
 import certProjectManagement from '../assets/certificates/FoundationsOfProjectManagement_Google_4March2023.jpg';
 
+// Import profile image
+import profileImage from '../assets/profile/my_profile.png';
+
 export const profile = {
   name: "Mah Rukh",
   role: "Flutter Developer & Full-Stack Software Engineer (MERN)",
@@ -37,8 +40,7 @@ export const badges = [
 ]
 
 // Swap this for a real photo whenever you have one — square-ish crops work best.
-export const portraitImage =
-  "https://placehold.co/640x800/151a22/9099a8?text=Add+your+photo&font=raleway"
+export const portraitImage = profileImage;
 
 export const skillGroups = [
   {
