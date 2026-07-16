@@ -1,109 +1,301 @@
+/* ============================================
+   DESIGN TOKENS
+   Concept: "Night shift" — a dark, moonlit sky
+   grounded with warm, retro-instrument accents
+   (mustard / teal / terracotta) pulled from the
+   vintage color references. The moon is the
+   signature: a live 3D body the page orbits.
+   ============================================ */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* color */
+  --bg: #0a0d12;
+  --bg-soft: #10141b;
+  --bg-panel: #151a22;
+  --hairline: rgba(237, 234, 226, 0.1);
+  --moonlight: #f4ecd8;
+  --text-primary: #edeae2;
+  --text-muted: #9099a8;
+  --text-faint: #5c6473;
+  --teal: #2fa3a6;
+  --teal-dim: #1c6668;
+  --mustard: #e3b04b;
+  --terracotta: #d15a35;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* reference palette — used from the About section down.
+     Hero/Moon keep the night tokens above untouched. */
+  --ref-green: #334b35;
+  --ref-green-deep: #263a28;
+  --ref-cream: #f5eee1;
+  --ref-mustard: #f9ad16;
+  --ref-ink: #2a2014;
+  --ref-black: #000000;
+  --ref-orange: #fd6038;
+  --ref-brown: #b86939;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  /* layout */
+  --container: 1180px;
+  --section-pad: clamp(64px, 10vw, 140px);
+  --radius: 14px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-#root {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+img, canvas {
+  display: block;
+  max-width: 100%;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--mustard);
+  color: var(--bg);
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+:focus-visible {
+  outline: 2px solid var(--mustard);
+  outline-offset: 3px;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  align-items: center;
+  gap: 10px;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--teal);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 14px 0 0;
+  color: var(--moonlight);
+}
+
+/* ============================================
+   SECTION THEMES
+   The hero keeps its own navy/moon palette via
+   the :root tokens above. Every section below the
+   hero opts into one of these themes, which locally
+   override the same token names — so components
+   never need theme-specific CSS of their own.
+   Palette source: reference moodboard —
+   forest #334B35 · cream #F5EEE1 · mustard #F9AD16
+   ink #2A2014 · black #000 · orange #FD6038 · brown #B86939
+   ============================================ */
+.theme-cream {
+  --bg: #f5eee1;
+  --bg-soft: #efe3d0;
+  --bg-panel: #ffffff;
+  --hairline: rgba(42, 32, 20, 0.12);
+  --text-primary: #2a2014;
+  --text-muted: #5c5140;
+  --text-faint: #8c7f68;
+  --moonlight: #2a2014;
+  --mustard: #b86939;
+  --teal: #b86939;
+  --terracotta: #fd6038;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.theme-forest {
+  --bg: #334b35;
+  --bg-soft: #2b4029;
+  --bg-panel: #2c4230;
+  --hairline: rgba(245, 238, 225, 0.16);
+  --text-primary: #f5eee1;
+  --text-muted: #cfd8c9;
+  --text-faint: #93a48d;
+  --moonlight: #f5eee1;
+  --mustard: #f9ad16;
+  --teal: #d9935f;
+  --terracotta: #fd6038;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.theme-black {
+  --bg: #000000;
+  --bg-soft: #141414;
+  --bg-panel: #161616;
+  --hairline: rgba(245, 238, 225, 0.14);
+  --text-primary: #f5eee1;
+  --text-muted: #b7ada0;
+  --text-faint: #847a6d;
+  --moonlight: #f5eee1;
+  --mustard: #f9ad16;
+  --teal: #d9935f;
+  --terracotta: #fd6038;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+/* fixed (non-themed) ink/paper — for text that must stay legible sitting
+   directly on a mustard/orange fill regardless of which theme wraps it */
+:root {
+  --ink: #2a2014;
+  --paper: #f5eee1;
+}
+
+.section-head {
+  margin-bottom: clamp(36px, 6vw, 64px);
+  max-width: 640px;
+}
+
+.section-lede {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 56ch;
+}
+
+section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--moonlight);
+  color: var(--bg);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.btn-ghost {
+  border-color: var(--hairline);
+  color: var(--text-primary);
+}
+.btn-ghost:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: var(--ref-orange);
+  color: var(--ref-cream);
+}
+.btn-accent:hover {
+  transform: translateY(-2px);
+  background: #e2502a;
+}
+
+/* ============================================
+   CROSS-SECTION OVERLAP
+   A section that should bleed into the one after it
+   gets `.overlap-out`: it trims its own trailing
+   padding (so content sits close to the edge) and
+   then pulls its box boundary up further than that
+   via negative margin — the difference is how much
+   of the last element (a card/panel) visually pokes
+   into the next section's background. The section
+   receiving the bleed gets `.overlap-in`, which adds
+   matching breathing room up top so its own content
+   doesn't collide with what's now sitting on top of it.
+   ============================================ */
+.overlap-out {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 24px;
+  margin-bottom: -96px;
+}
+
+.overlap-in {
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--section-pad) + 96px);
+}
+
+@media (max-width: 700px) {
+  .overlap-out {
+    padding-bottom: 16px;
+    margin-bottom: -56px;
+  }
+  .overlap-in {
+    padding-top: calc(var(--section-pad) + 56px);
+  }
 }
