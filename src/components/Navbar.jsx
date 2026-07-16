@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav-inner container">
         <a href="#home" className="nav-brand">
-          Mah Rukh<span>.</span>
+          Mah Rukh
         </a>
         <nav className={`nav-links ${open ? 'nav-links--open' : ''}`}>
           {links.map((l) => (
