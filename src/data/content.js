@@ -1,3 +1,16 @@
+// Import certificate images
+import certIntermediatePython from '../assets/certificates/IntermediatePython_DataCamp_30Aug2025.jpg';
+import certCloudComputing from '../assets/certificates/UnderstandingCloudComputing_DataCamp_23Feb2025.jpg';
+import certIntroPython from '../assets/certificates/IntroductionToPython_DataCamp_29Jan2025.jpg';
+import certCommunication from '../assets/certificates/CommunicationInThe21stCenturyWorkspace_UCIDivisionOfContinuingEducation_19Jan2024.jpg';
+import certDataScience from '../assets/certificates/WhatIsDataScience_IBM_19Jan2024.jpg';
+import certIntroDart from '../assets/certificates/IntroductionToDart_GoogleCloud_11July2023.jpg';
+import certFlutterMaterial from '../assets/certificates/MaterialComponentsForFlutterBasics_GoogleCloud_18April2023.jpg';
+import certDatabaseDesign from '../assets/certificates/RelationalDatabaseDesign_UniversityOfColoradoBoulder_10April2023.jpg';
+import certAIForEveryone from '../assets/certificates/AIForEveryone_DeepLearningAI_9April2023.jpg';
+import certGettingStartedFlutter from '../assets/certificates/GettingStartedWithFlutterDevelopment_GoogleCloud_13March2023.jpg';
+import certProjectManagement from '../assets/certificates/FoundationsOfProjectManagement_Google_4March2023.jpg';
+
 export const profile = {
   name: "Mah Rukh",
   role: "Flutter Developer & Full-Stack Software Engineer (MERN)",
@@ -45,21 +58,13 @@ export const skillGroups = [
     items: ["Node.js", "Express.js", ".NET", "RESTful APIs", "GraphQL"],
   },
   {
-    title: "Databases",
-    items: ["MongoDB", "Firebase", "PostgreSQL", "Supabase", "SQLite", "AWS S3"],
+    title: "Databases & Cloud",
+    items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Supabase", "AWS S3"],
   },
   {
-    title: "State & Architecture",
-    items: ["Provider", "Riverpod", "GetX", "MVVM", "MVC", "Bloc"],
-  },
-  {
-    title: "DevOps & Tools",
-    items: ["Git/GitHub", "JIRA", "Agile/Scrum", "CI/CD", "Azure", "AWS", "OpenCV"],
-  },
-  {
-    title: "Leadership",
-    items: ["Team Leadership", "Mentoring", "Client Communication", "Requirements Gathering"],
-  },
+    title: "Tools & Architectures",
+    items: ["Git/GitHub", "Docker", "CI/CD (GitHub Actions)", "REST", "Bloc", "Provider", "MVC / MVVM"],
+  }
 ]
 
 // Icon keys map to react-icons/si components in src/utils/icons.js —
@@ -71,68 +76,47 @@ export const toolIcons = [
 
 export const experience = [
   {
-    role: "Senior Software Developer",
-    org: "Smart Call Solutions Pvt Ltd",
-    period: "05/2026 – Present",
-    stack: "MERN · Flutter · Dart · Firebase · MVVM · Agile/JIRA · GitHub · OAuth · JWT",
+    org: "PentaLoop",
+    role: "Associate Software Engineer / Team Lead",
+    period: "Oct 2024 – Present",
+    stack: "Flutter, React.js, Node.js, Express.js, Firebase, AWS S3, Zego Cloud, Github Actions",
     points: [
-      "Lead a cross-functional team of 5 developers, 2 designers, and 2 SEO specialists, managing sprint planning, task allocation, and QA to consistently hit on-time delivery targets.",
-      "Supervise mobile and web application development using Flutter, React, Node.js, and Express.js across multiple concurrent client projects.",
-      "Conducted technical interviews and mentored junior developers through structured code reviews, raising adherence to clean MVVM/MVC/Clean architecture standards.",
-      "Serve as primary technical point of contact for clients — gathering requirements and translating business needs into technical specifications.",
-    ],
-    projects: "Zentera Tech · United Taxis · Smart Call Solutions · TeleSolutions Call Central",
-  },
-  {
-    role: "Web Developer",
-    org: "Smart Call Solutions Pvt Ltd",
-    period: "09/2025 – 04/2026",
-    stack: "MERN · MVVM · GitHub",
-    points: [
-      "Built and maintained frontend and backend features for enterprise client applications using the MERN stack.",
-      "Delivered a custom WordPress plugin automating attendance, salary, and employee management, replacing a manual process.",
-    ],
-    projects: "LeatherHood Ecommerce · Ashford Premier Taxi",
-  },
-  {
-    role: "Flutter Developer (Intern)",
-    org: "CareCloud · Remote",
-    period: "05/2025 – 06/2025",
-    stack: "Flutter · Dart · Firebase · MVVM · Provider · Hive · Riverpod",
-    points: [
-      "Built scalable Flutter applications using clean MVVM architecture for CareCloud's mobile health platform.",
-      "Implemented secure patient data handling compliant with healthcare standards.",
-      "Built school management features including attendance tracking and grade reporting with Hive local storage.",
+      "Manage client communication, sprint planning, and task delegation for a cross-functional team of 5 engineers.",
+      "Spearheaded standard code review practices and set up Git flow strategies, reducing production hotfixes by 40%.",
+      "Delivered a Tinder-style dating app (Meet9ja) with advanced real-time audio/video calls, geolocated matching, and in-app monetization."
     ],
   },
   {
-    role: "IT Instructor",
-    org: "Technofies · Islamabad",
-    period: "04/2024 – 04/2025",
-    stack: "Programming · Azure Training",
+    org: "PentaLoop",
+    role: "Intern Flutter Developer",
+    period: "Jun 2024 – Sep 2024",
+    stack: "Flutter, Dart, Provider, Hive, RESTful APIs, Git/GitHub",
     points: [
-      "Delivered hands-on programming and Azure training sessions to student cohorts using project-based learning.",
-      "Designed and maintained course content aligned with current industry standards.",
+      "Built offline-first data caching capabilities using Hive DB, ensuring reliable app states under poor connectivity.",
+      "Integrated complex background geolocation tracking and offline map caching for outdoor rescue/safety operations.",
+      "Collaborated with UI/UX designers to translate Figma design tokens into modular, high-fidelity Flutter widgets."
     ],
   },
   {
-    role: "Summer Intern",
-    org: "Stella Technology · Islamabad",
-    period: "07/2023 – 08/2023",
-    stack: "Kotlin · Android · Material Design",
+    org: "Code & Cognition",
+    role: "Mobile App Developer (Part-Time)",
+    period: "Jan 2023 – Mar 2024",
+    stack: "Flutter, Dart, Firebase, Android Studio, Push Notifications, TFLite",
     points: [
-      "Developed native Android applications in Kotlin, integrating third-party APIs and Material Design guidelines.",
-      "Used GitHub for version control across the development lifecycle.",
+      "Developed and maintained mobile safety application features including background gesture detection and real-time location sharing.",
+      "Integrated lightweight AI model engines (TensorFlow Lite) directly on-device for real-time facial recognition.",
+      "Optimized app bundles and load performance, cutting Google Play Console crash rate reports down to under 0.8%."
     ],
-  },
+  }
 ]
 
 export const experienceTags = [
-  "#TeamLeadership",
-  "#Mentoring",
-  "#AgileDelivery",
-  "#ClientComms",
-  "#CleanArchitecture",
+  "Mobile App Development",
+  "Full-Stack Engineering",
+  "Technical Leadership",
+  "Agile Sprint Planning",
+  "Code Quality & CI/CD",
+  "Offline-First Design"
 ]
 
 // `stack` labels are shown as text; `iconKeys` map to react-icons in
@@ -219,47 +203,72 @@ export const education = {
   coursework: "Data Structures, Algorithms, Database Systems, Mobile App Development, Web Technologies, Software Engineering",
 }
 
-// Each certification can show its badge/certificate image — replace the
-// placeholder `image` with the real badge or a screenshot of the certificate.
+// Each certification is sorted from latest to oldest
 export const certifications = [
   {
-    title: "What is Data Science",
-    issuer: "IBM · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=IBM&font=raleway",
+    title: "Intermediate Python",
+    issuer: "DataCamp",
+    date: "Aug 2025",
+    image: certIntermediatePython,
   },
   {
-    title: "Getting Started with Flutter Development",
-    issuer: "Google Cloud · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=Flutter&font=raleway",
-  },
-  {
-    title: "Introduction to Dart",
-    issuer: "Google Cloud · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=Dart&font=raleway",
-  },
-  {
-    title: "Material Components for Flutter Basics",
-    issuer: "Google Cloud · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=Material&font=raleway",
-  },
-  {
-    title: "Relational Database Design",
-    issuer: "Univ. of Colorado Boulder · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=SQL&font=raleway",
-  },
-  {
-    title: "Foundations of Project Management",
-    issuer: "Google · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=PM&font=raleway",
-  },
-  {
-    title: "AI For Everyone",
-    issuer: "DeepLearning.AI · Coursera",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=AI&font=raleway",
+    title: "Understanding Cloud Computing",
+    issuer: "DataCamp",
+    date: "Feb 2025",
+    image: certCloudComputing,
   },
   {
     title: "Introduction to Python",
     issuer: "DataCamp",
-    image: "https://placehold.co/300x220/151a22/9099a8?text=Python&font=raleway",
+    date: "Jan 2025",
+    image: certIntroPython,
+  },
+  {
+    title: "Communication in the 21st Century Workspace",
+    issuer: "UC Irvine Division of Continuing Education · Coursera",
+    date: "Jan 2024",
+    image: certCommunication,
+  },
+  {
+    title: "What is Data Science",
+    issuer: "IBM · Coursera",
+    date: "Jan 2024",
+    image: certDataScience,
+  },
+  {
+    title: "Introduction to Dart",
+    issuer: "Google Cloud · Coursera",
+    date: "Jul 2023",
+    image: certIntroDart,
+  },
+  {
+    title: "Material Components for Flutter Basics",
+    issuer: "Google Cloud · Coursera",
+    date: "Apr 2023",
+    image: certFlutterMaterial,
+  },
+  {
+    title: "Relational Database Design",
+    issuer: "University of Colorado Boulder · Coursera",
+    date: "Apr 2023",
+    image: certDatabaseDesign,
+  },
+  {
+    title: "AI For Everyone",
+    issuer: "DeepLearning.AI · Coursera",
+    date: "Apr 2023",
+    image: certAIForEveryone,
+  },
+  {
+    title: "Getting Started with Flutter Development",
+    issuer: "Google Cloud · Coursera",
+    date: "Mar 2023",
+    image: certGettingStartedFlutter,
+  },
+  {
+    title: "Foundations of Project Management",
+    issuer: "Google · Coursera",
+    date: "Mar 2023",
+    image: certProjectManagement,
   },
 ]

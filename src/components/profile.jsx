@@ -261,8 +261,9 @@ export default function Profile() {
                   <img src={cert.image} alt={cert.title} className="cert-image" />
                 </div>
                 <div className="cert-info">
-                  <h4>{cert.title}</h4>
-                  <p>{cert.issuer}</p>
+                  <span className="cert-date">{cert.date}</span>
+                  <h4 className="cert-title">{cert.title}</h4>
+                  <p className="cert-from">From: {cert.issuer}</p>
                 </div>
               </div>
             ))}
