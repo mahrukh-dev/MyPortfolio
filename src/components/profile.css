@@ -292,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   text-decoration: none;
   padding: 14px 28px;
-  border-radius: 30px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
   transition: transform 0.2s ease, filter 0.2s;

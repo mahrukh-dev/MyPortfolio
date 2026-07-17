@@ -14,7 +14,7 @@ import {
   certifications
 } from '../data/content.js';
 import { TechIcon } from '../utils/icons.jsx';
-import { GraduationCap, Briefcase, Award } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Github, Linkedin } from 'lucide-react';
 
 export default function Profile() {
   return (
@@ -24,11 +24,11 @@ export default function Profile() {
         <div className="about-grid">
           {/* Left Side: Text and CTA */}
           <div className="about-intro">
-            <h2 className="section-title-large">Hello, <br />I'm {profile.name.split(' ')[0]} !</h2>
+            <h2 className="section-title-large">Hello, <br />I'm {profile.name} !</h2>
             <p className="about-description">{profile.summary}</p>
             <div className="about-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               <a href={`https://${profile.linkedin}`} target="_blank" rel="noreferrer" className="btn-linkedin">
-                <span className="search-icon">🔍</span> LinkedIn
+                <Linkedin size={16} /> LinkedIn
               </a>
               <a href={`https://${profile.github}`} target="_blank" rel="noreferrer" className="btn-github" style={{
                 display: 'inline-flex',
@@ -38,13 +38,13 @@ export default function Profile() {
                 color: 'white',
                 textDecoration: 'none',
                 padding: '14px 28px',
-                borderRadius: '30px',
+                borderRadius: '8px',
                 fontWeight: 600,
                 fontSize: '15px',
                 transition: 'transform 0.2s ease, filter 0.2s',
                 boxShadow: '0 4px 10px rgba(0, 0, 0, 0.25)'
               }}>
-                GitHub
+                <Github size={16} /> GitHub
               </a>
             </div>
           </div>
