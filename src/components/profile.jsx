@@ -14,6 +14,7 @@ import {
   certifications
 } from '../data/content.js';
 import { TechIcon } from '../utils/icons.jsx';
+import { GraduationCap, Briefcase, Award } from 'lucide-react';
 
 export default function Profile() {
   return (
@@ -99,8 +100,8 @@ export default function Profile() {
               <h2 className="section-title-accent">Education</h2>
               <div className="timeline">
                 <div className="timeline-item">
-                  <div className="timeline-year">
-                    <span className="star-bullet">✦</span> {education.period}
+                  <div className="timeline-year" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <GraduationCap className="star-bullet" size={16} style={{ flexShrink: 0 }} /> {education.period}
                   </div>
                   <div className="timeline-content">
                     <h4>{education.school}</h4>
@@ -119,7 +120,9 @@ export default function Profile() {
               <div className="exp-timeline">
                 {experience.map((exp, idx) => (
                   <div className="exp-item" key={idx}>
-                    <div className="exp-year">✦ {exp.period}</div>
+                    <div className="exp-year" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      <Briefcase size={14} style={{ color: 'var(--color-black)', flexShrink: 0 }} /> {exp.period}
+                    </div>
                     <div className="exp-content">
                       <h4>{exp.role}</h4>
                       <h5 className="exp-org">{exp.org}</h5>
@@ -164,9 +167,37 @@ export default function Profile() {
                   <div className="skills-sub-block" key={idx}>
                     <h3>{group.title}</h3>
                     <div className="skills-pill-group">
-                      {group.items.map((item, itemIdx) => (
-                        <span className="skill-pill" key={itemIdx}>{item}</span>
-                      ))}
+                      {group.items.map((item, itemIdx) => {
+                        const getSkillIconKey = (name) => {
+                          const norm = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+                          if (norm.includes('reactnative')) return 'react';
+                          if (norm.includes('react')) return 'react';
+                          if (norm.includes('nodejs')) return 'nodejs';
+                          if (norm.includes('express')) return 'express';
+                          if (norm.includes('nextjs')) return 'nextjs';
+                          if (norm.includes('tailwind')) return 'tailwindcss';
+                          if (norm.includes('git')) return 'git';
+                          if (norm.includes('postgres')) return 'postgresql';
+                          if (norm.includes('firebase')) return 'firebase';
+                          if (norm.includes('mongodb')) return 'mongodb';
+                          if (norm.includes('dart')) return 'dart';
+                          if (norm.includes('kotlin')) return 'kotlin';
+                          if (norm.includes('python')) return 'python';
+                          if (norm.includes('flutter')) return 'flutter';
+                          if (norm.includes('javascript')) return 'javascript';
+                          if (norm.includes('graphql')) return 'graphql';
+                          if (norm.includes('figma')) return 'figma';
+                          if (norm.includes('android')) return 'androidstudio';
+                          return null;
+                        };
+                        const iconKey = getSkillIconKey(item);
+                        return (
+                          <span className="skill-pill" key={itemIdx}>
+                            {iconKey && <TechIcon name={iconKey} size={14} />}
+                            {item}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
@@ -181,7 +212,7 @@ export default function Profile() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Projects</span>
-            <h2 className="section-title">Selected Works</h2>
+            <h2 className="section-title">Selected Projects</h2>
           </div>
           <div className="projects-grid">
             {projects.map((proj, idx) => (
@@ -193,7 +224,7 @@ export default function Profile() {
                   <span className="project-tag">{proj.tag}</span>
                   <h3 className="project-title">{proj.name}</h3>
                   <p className="project-desc">{proj.desc}</p>
-                  
+
                   {proj.stack && (
                     <div className="project-tech-list">
                       {proj.stack.map((tech, tIdx) => (
@@ -234,7 +265,7 @@ export default function Profile() {
             {leadership.map((lead, idx) => (
               <div className="leadership-card" key={idx}>
                 <div className="leadership-header">
-                  <span className="orange-star">✦</span>
+                  <Award className="orange-star" size={24} style={{ flexShrink: 0 }} />
                   <div>
                     <h3>{lead.org}</h3>
                     <h4 className="leadership-role">{lead.role}</h4>

@@ -64,7 +64,7 @@ export default function Hero() {
           <h1 className="hero-title">{profile.name}</h1>
           <p className="hero-role">{profile.role}</p>
           <p className="hero-sub">
-            I build cross-platform apps and full-stack systems that ship — from
+            I build cross-platform apps and full-stack systems that ship from
             mobile to web, prototype to production.
           </p>
           <div className="hero-actions">

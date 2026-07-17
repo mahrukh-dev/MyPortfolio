@@ -78,36 +78,58 @@ export const toolIcons = [
 
 export const experience = [
   {
-    org: "PentaLoop",
-    role: "Associate Software Engineer / Team Lead",
-    period: "Oct 2024 – Present",
-    stack: "Flutter, React.js, Node.js, Express.js, Firebase, AWS S3, Zego Cloud, Github Actions",
+    org: "Smart Call Solutions Pvt Ltd",
+    role: "Senior Software Developer",
+    period: "May 2026 – Present",
+    stack: "MERN · Flutter · Dart · Firebase · MVVM · Agile/JIRA · GitHub · OAuth · JWT Authentication",
     points: [
-      "Manage client communication, sprint planning, and task delegation for a cross-functional team of 5 engineers.",
-      "Spearheaded standard code review practices and set up Git flow strategies, reducing production hotfixes by 40%.",
-      "Delivered a Tinder-style dating app (Meet9ja) with advanced real-time audio/video calls, geolocated matching, and in-app monetization."
+      "Lead a cross-functional team of 5 developers, 2 designers, and 2 SEO specialists, managing sprint planning, task allocation, and QA to consistently hit on-time delivery targets.",
+      "Supervise mobile and web application development using Flutter, React, Node.js, and Express.js across multiple concurrent client projects.",
+      "Conducted technical interviews and mentored junior developers through structured code reviews, raising adherence to clean MVVM/MVC/Clean architecture standards across the team.",
+      "Integrate REST APIs and optimize application performance, improving scalability and maintainability of production applications.",
+      "Serve as primary technical point of contact for clients — gathering requirements, delivering progress updates, and translating business needs into technical specifications."
+    ],
+    projects: "Zentera Tech, United Taxis, Smart Call Solutions, TeleSolutions Call Central",
+  },
+  {
+    org: "Smart Call Solutions Pvt Ltd",
+    role: "Web Developer",
+    period: "Sep 2025 – Apr 2026",
+    stack: "MERN · MVVM · GitHub",
+    points: [
+      "Built and maintained frontend and backend features for enterprise client applications using the MERN stack.",
+      "Delivered a custom WordPress plugin automating attendance, salary, and employee management for a client, replacing a manual process."
+    ],
+    projects: "LeatherHood Ecommerce, Ashford Premier Taxi",
+  },
+  {
+    org: "CareCloud (Remote)",
+    role: "Flutter Developer (Intern)",
+    period: "May 2025 – Jun 2025",
+    stack: "Flutter · Dart · Firebase · MVVM · Provider · Hive · Riverpod",
+    points: [
+      "Built scalable Flutter applications using clean MVVM architecture for CareCloud's mobile health platform.",
+      "Developed healthcare mobile applications using clean MVVM architecture with Provider state management. Implemented secure patient data handling compliant with healthcare standards. Built school management features including attendance tracking and grade reporting with Hive local storage."
     ],
   },
   {
-    org: "PentaLoop",
-    role: "Intern Flutter Developer",
-    period: "Jun 2024 – Sep 2024",
-    stack: "Flutter, Dart, Provider, Hive, RESTful APIs, Git/GitHub",
+    org: "Technofies (Islamabad)",
+    role: "IT Instructor",
+    period: "Apr 2024 – Apr 2025",
+    stack: "Programming · Azure",
     points: [
-      "Built offline-first data caching capabilities using Hive DB, ensuring reliable app states under poor connectivity.",
-      "Integrated complex background geolocation tracking and offline map caching for outdoor rescue/safety operations.",
-      "Collaborated with UI/UX designers to translate Figma design tokens into modular, high-fidelity Flutter widgets."
+      "Delivered hands-on programming and Azure training sessions to student cohorts using project-based learning.",
+      "Designed and maintained course content aligned with current industry standards and practical, real-world skills."
     ],
   },
   {
-    org: "Code & Cognition",
-    role: "Mobile App Developer (Part-Time)",
-    period: "Jan 2023 – Mar 2024",
-    stack: "Flutter, Dart, Firebase, Android Studio, Push Notifications, TFLite",
+    org: "Stella Technology (Islamabad)",
+    role: "Summer Intern",
+    period: "Jul 2023 – Aug 2023",
+    stack: "Kotlin · Android · GitHub · APIs · Material Design",
     points: [
-      "Developed and maintained mobile safety application features including background gesture detection and real-time location sharing.",
-      "Integrated lightweight AI model engines (TensorFlow Lite) directly on-device for real-time facial recognition.",
-      "Optimized app bundles and load performance, cutting Google Play Console crash rate reports down to under 0.8%."
+      "Developed native Android applications in Kotlin, integrating third-party APIs and Material Design guidelines.",
+      "Used GitHub for version control across the development lifecycle."
     ],
   }
 ]
