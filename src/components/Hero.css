@@ -123,4 +123,51 @@
 
 @media (max-width: 640px) {
   .hero-wrap { height: 200vh; }
+
+  .hero-copy {
+    padding: 0 20px;
+    justify-content: flex-end;
+    padding-bottom: 120px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
+
+  .hero-role {
+    font-size: 0.78rem;
+    margin-top: 12px;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  .hero-wordmark span {
+    font-size: clamp(2.5rem, 18vw, 5rem);
+  }
+
+  .scroll-hint {
+    bottom: 20px;
+  }
 }

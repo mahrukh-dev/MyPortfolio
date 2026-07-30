@@ -102,10 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  padding: 40px 8%;
-  flex-grow: 1;
-  align-items: center;
-  gap: 60px;
+  padding: 24px 5%;
+  gap: 40px;
 }
 
 /* Hero Left (Overlapping Portrait Container) */
@@ -745,45 +743,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(42, 32, 20, 0.7);
 }
 
-/* RESPONSIVENESS */
-@media (max-width: 992px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-  }
-  .hero-left, .hero-right {
-    align-items: center;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 80px;
-  }
-  .collage-container {
-    max-width: 340px;
-  }
-  .contact-card-overlay {
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .split-grid {
-    grid-template-columns: 1fr;
-  }
-  .split-left-column {
-    padding: 50px 8% 30px 8%;
-  }
-  .split-right-column {
-    padding: 30px 8% 40px 8%;
-  }
-  .bottom-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 /* Stats Strip */
 .stats-container {
@@ -899,7 +859,7 @@ h1, h2, h3, h4, h5, h6 {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
   margin-top: 40px;
 }
 
@@ -939,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-content {
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1141,3 +1101,254 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   margin: 0;
 }
+
+/* ==========================================
+   RESPONSIVENESS (Must stay at end of file)
+   ========================================== */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .hero-left, .hero-right {
+    align-items: center;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 5% 8%;
+  }
+  .collage-container {
+    max-width: 340px;
+    overflow: visible;
+  }
+  .contact-card-overlay {
+    position: static;
+    transform: none;
+    width: 100%;
+    bottom: auto;
+    left: auto;
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+  .split-left-column {
+    padding: 50px 8% 30px 8%;
+  }
+  .split-right-column {
+    padding: 30px 8% 40px 8%;
+  }
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 16px 5%;
+  }
+  .hero-section {
+    padding-bottom: 60px;
+  }
+  .hero-content {
+    padding: 24px 5%;
+    gap: 30px;
+  }
+  .giant-title {
+    font-size: clamp(3rem, 14vw, 5rem);
+    letter-spacing: -1px;
+  }
+  .image-card-wrapper {
+    max-width: 260px;
+  }
+  .hero-tagline {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  .hero-social-links {
+    font-size: 14px;
+  }
+  .scroll-down-badge {
+    width: 76px;
+    height: 76px;
+    font-size: 11px;
+  }
+  .about-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .about-grid {
+    padding: 5% 5%;
+    gap: 32px;
+  }
+  .section-title-large {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 16px;
+  }
+  .about-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+  .btn-linkedin {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .collage-container {
+    max-width: 280px;
+  }
+  .contact-card-overlay {
+    padding: 20px;
+    width: 100%;
+  }
+  .contact-card-overlay h3 {
+    font-size: 18px;
+  }
+  .stats-container {
+    padding: 24px 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 16px;
+  }
+  .stat-card:nth-child(even) {
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 12px;
+  }
+  .split-left-column {
+    padding: 40px 5%;
+    gap: 40px;
+  }
+  .split-right-column {
+    padding: 30px 5% 40px;
+  }
+  .section-title-accent {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    margin-bottom: 20px;
+  }
+  .experience-box {
+    padding: 24px 20px;
+  }
+  .experience-title {
+    font-size: 1.6rem;
+  }
+  .timeline-year {
+    min-width: 100px;
+    font-size: 13px;
+  }
+  .exp-year {
+    min-width: 64px;
+    font-size: 13px;
+  }
+  .web-skills-list {
+    grid-template-columns: 1fr;
+  }
+  .ghost-text {
+    font-size: 4rem;
+  }
+  .bottom-info-section {
+    padding: 60px 5% 60px;
+  }
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .languages-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Projects — single column + card internal responsiveness */
+  .portfolio-container .projects-section {
+    padding: 40px 5%;
+  }
+  .projects-section .section-head {
+    padding-top: 0;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .project-content {
+    padding: 16px;
+  }
+  .project-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .project-desc {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .project-tag {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .project-tech-list {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tech-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .project-footer {
+    padding-top: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .project-link-btn {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+  .project-icons svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Leadership */
+  .portfolio-container .leadership-section {
+    padding: 40px 5%;
+  }
+  .leadership-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .leadership-card {
+    padding: 20px;
+  }
+
+  /* Certifications */
+  .portfolio-container .certifications-section {
+    padding: 40px 5%;
+  }
+  .certifications-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sub-navbar tabs */
+  .sub-navbar {
+    margin-bottom: 40px;
+  }
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
