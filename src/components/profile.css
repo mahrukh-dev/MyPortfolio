@@ -302,22 +302,25 @@ h1, h2, h3, h4, h5, h6 {
   filter: brightness(1.1);
 }
 
-/* Complex Collage (High Overlap) */
+/* Portrait collage layers labels and the contact panel over the lower photo area. */
 .collage-container {
-  position: relative;
   width: 100%;
-  max-width: 380px;
-  aspect-ratio: 1/1.15;
+  max-width: 360px;
   margin: 0 auto;
 }
 
-/* Overlapping backdrop elements behind picture */
+.portrait-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.69;
+}
+
 .green-backdrop-box {
   position: absolute;
   background-color: var(--color-green);
-  width: 80%;
-  height: 80%;
-  bottom: 0;
+  width: 76%;
+  height: 64%;
+  top: 23%;
   right: 0;
   border-radius: 4px;
   z-index: 1;
@@ -327,74 +330,78 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   background-color: var(--color-cream);
   border: 1.5px dashed rgba(42, 32, 20, 0.15);
-  width: 170px;
-  height: 170px;
+  width: 43%;
+  aspect-ratio: 1;
   border-radius: 50%;
-  top: 10%;
-  left: -10%;
+  top: 32%;
+  left: 3%;
   z-index: 1;
 }
 
-/* Top rounded portrait overlapping its background shapes */
 .main-portrait {
   position: absolute;
-  background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80');
-  width: 80%;
-  height: 80%;
+  width: 78%;
+  height: 88%;
   top: 0;
-  left: 5%;
-  border-radius: 120px 120px 0 0;
+  left: 11%;
+  border-radius: 44% 44% 0 0 / 25% 25% 0 0;
+  background-position: center 28%;
+  background-size: cover;
   z-index: 2;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Overlapping yellow badges */
+.portrait-badges {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
 .badge {
   position: absolute;
+  top: 60%;
   background-color: var(--color-yellow);
   color: var(--color-dark-brown);
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 700;
-  z-index: 3;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .birth-badge {
-  top: 32%;
-  left: -20px;
+  left: -8%;
 }
 
 .nation-badge {
-  top: 52%;
-  right: 0%;
+  right: -8%;
 }
 
-/* Contact Card (Overlaps the bottom of the portrait AND hangs down over the split border) */
 .contact-card-overlay {
   position: absolute;
+  left: 10%;
+  bottom: -7%;
+  z-index: 4;
   background-color: var(--color-black);
   color: white;
-  padding: 28px;
-  width: 270px;
+  padding: 18px 22px;
+  width: 80%;
   border-radius: 4px;
-  bottom: -40px; /* Negative value makes it overhang past the about section */
-  left: 10%;
-  z-index: 15; /* Highest stack level to stay on top of the next section */
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .contact-card-overlay h3 {
-  font-size: 22px;
-  margin-bottom: 16px;
+  font-size: 26px;
+  margin-bottom: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 8px;
 }
 
 .contact-card-overlay p {
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   opacity: 0.9;
 }
 
@@ -1207,15 +1214,6 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 340px;
     overflow: visible;
   }
-  .contact-card-overlay {
-    position: static;
-    transform: none;
-    width: 100%;
-    bottom: auto;
-    left: auto;
-    margin-top: 24px;
-    border-radius: 8px;
-  }
   .split-grid {
     grid-template-columns: 1fr;
   }
@@ -1291,15 +1289,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 12px 20px;
     font-size: 14px;
   }
-  .collage-container {
-    max-width: 280px;
-  }
-  .contact-card-overlay {
-    padding: 20px;
-    width: 100%;
-  }
   .contact-card-overlay h3 {
-    font-size: 18px;
+    font-size: 22px;
   }
   .stats-container {
     padding: 24px 20px;

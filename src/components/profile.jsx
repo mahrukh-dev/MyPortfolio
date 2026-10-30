@@ -71,26 +71,25 @@ export default function Profile() {
           {/* Right Side: High-Overlap Collage */}
           <div className="about-graphics">
             <div className="collage-container">
-              {/* Overlapping backdrops */}
-              <div className="green-backdrop-box"></div>
-              <div className="white-backdrop-circle"></div>
+              <div className="portrait-scene">
+                <div className="green-backdrop-box"></div>
+                <div className="white-backdrop-circle"></div>
+                <div className="portrait-placeholder main-portrait" style={{ backgroundImage: `url(${portraitImage})` }}></div>
 
-              {/* Main portrait with rounded top */}
-              <div className="portrait-placeholder main-portrait" style={{ backgroundImage: `url(${portraitImage})` }}></div>
-
-              {/* Overlapping pill badges */}
-              {badges.map((b, idx) => (
-                <div key={idx} className={`badge ${idx === 0 ? 'birth-badge' : 'nation-badge'}`}>
-                  {b.label}
+                <div className="portrait-badges">
+                  {badges.map((b, idx) => (
+                    <span key={b.label} className={`badge ${idx === 0 ? 'birth-badge' : 'nation-badge'}`}>
+                      {b.label}
+                    </span>
+                  ))}
                 </div>
-              ))}
 
-              {/* Overlapping Contact card (Hangs over the section below) */}
-              <div className="contact-card-overlay">
-                <h3>Contact Details</h3>
-                <p>📍 {profile.location}</p>
-                <p>✉️ {profile.email}</p>
-                <p>📞 {profile.phone}</p>
+                <div className="contact-card-overlay">
+                  <h3>Contact</h3>
+                  <p>📍 {profile.location}</p>
+                  <p>✉️ {profile.email}</p>
+                  <p>📞 {profile.phone}</p>
+                </div>
               </div>
             </div>
           </div>
