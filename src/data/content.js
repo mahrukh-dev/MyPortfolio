@@ -30,7 +30,7 @@ export const stats = [
   { value: "3+", label: "Years shipping production apps" },
   { value: "5", label: "Engineers led as team lead" },
   { value: "9", label: "Apps & platforms delivered" },
-  { value: "3.23", label: "CGPA — B.S. Computer Science" },
+  { value: "3.18", label: "CGPA — B.S. Computer Science" },
 ]
 
 // Small badge pills shown over the portrait — edit freely.
