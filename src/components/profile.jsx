@@ -2,6 +2,7 @@ import React from 'react';
 import './profile.css';
 import {
   profile,
+  getProjectSlug,
   stats,
   badges,
   portraitImage,
@@ -217,6 +218,13 @@ export default function Profile() {
           <div className="projects-grid">
             {projects.map((proj, idx) => (
               <div className="project-card" key={idx}>
+                <a
+                  className="project-card-details-link"
+                  href={`?project=${encodeURIComponent(getProjectSlug(proj.name))}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`View details for ${proj.name}`}
+                />
                 <div className="project-image-wrap">
                   <img src={proj.image} alt={proj.name} className="project-image" />
                 </div>

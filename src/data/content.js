@@ -146,6 +146,9 @@ export const experienceTags = [
 // `stack` labels are shown as text; `iconKeys` map to react-icons in
 // src/utils/icons.js and render as the little tech-stack row on each card.
 // `image` is a placeholder — replace with a real screenshot per project.
+export const getProjectSlug = (name) =>
+  name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
 export const projects = [
   {
     name: "Rescue App",
@@ -223,7 +226,7 @@ export const education = {
   degree: "B.S. Computer Science",
   school: "Air University, Islamabad",
   period: "2021 – 2025",
-  cgpa: "3.23",
+  cgpa: "3.18",
   coursework: "Data Structures, Algorithms, Database Systems, Mobile App Development, Web Technologies, Software Engineering",
 }
 
