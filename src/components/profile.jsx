@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './profile.css';
 import {
   profile,
@@ -18,6 +18,24 @@ import { TechIcon } from '../utils/icons.jsx';
 import { GraduationCap, Briefcase, Award, Github, Linkedin } from 'lucide-react';
 
 export default function Profile() {
+  const [selectedProjectCategories, setSelectedProjectCategories] = useState([])
+  const [selectedCertificationCategories, setSelectedCertificationCategories] = useState([])
+  const projectCategories = [...new Set(projects.flatMap((project) => project.categories))]
+  const certificationCategories = [...new Set(certifications.flatMap((certification) => certification.categories))]
+  const visibleProjects = projects.filter((project) =>
+    selectedProjectCategories.length === 0 ||
+    project.categories.some((category) => selectedProjectCategories.includes(category))
+  )
+  const visibleCertifications = certifications.filter((certification) =>
+    selectedCertificationCategories.length === 0 ||
+    certification.categories.some((category) => selectedCertificationCategories.includes(category))
+  )
+  const toggleCategory = (selected, setSelected, category) => {
+    setSelected(selected.includes(category)
+      ? selected.filter((item) => item !== category)
+      : [...selected, category])
+  }
+
   return (
     <div className="portfolio-container">
       {/* 1. ABOUT ME SECTION */}
@@ -237,9 +255,30 @@ export default function Profile() {
             <span className="eyebrow">Projects</span>
             <h2 className="section-title">Selected Projects</h2>
           </div>
+          <div className="category-filters" role="group" aria-label="Filter projects by category">
+            <button
+              type="button"
+              className={`category-filter${selectedProjectCategories.length === 0 ? ' is-active' : ''}`}
+              aria-pressed={selectedProjectCategories.length === 0}
+              onClick={() => setSelectedProjectCategories([])}
+            >
+              All
+            </button>
+            {projectCategories.map((category) => (
+              <button
+                type="button"
+                className={`category-filter${selectedProjectCategories.includes(category) ? ' is-active' : ''}`}
+                aria-pressed={selectedProjectCategories.includes(category)}
+                key={category}
+                onClick={() => toggleCategory(selectedProjectCategories, setSelectedProjectCategories, category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
           <div className="projects-grid">
-            {projects.map((proj, idx) => (
-              <div className="project-card" key={idx}>
+            {visibleProjects.map((proj) => (
+              <div className="project-card" key={proj.name}>
                 <a
                   className="project-card-details-link"
                   href={`?project=${encodeURIComponent(getProjectSlug(proj.name))}`}
@@ -253,6 +292,11 @@ export default function Profile() {
                 <div className="project-content">
                   <span className="project-tag">{proj.tag}</span>
                   <h3 className="project-title">{proj.name}</h3>
+                  <div className="item-category-list" aria-label={`${proj.name} categories`}>
+                    {proj.categories.map((category) => (
+                      <span className="item-category-tag" key={category}>{category}</span>
+                    ))}
+                  </div>
                   <p className="project-desc">{proj.desc}</p>
 
                   {proj.stack && (
@@ -315,9 +359,30 @@ export default function Profile() {
             <span className="eyebrow">Learning</span>
             <h2 className="section-title">Certifications</h2>
           </div>
+          <div className="category-filters" role="group" aria-label="Filter certifications by category">
+            <button
+              type="button"
+              className={`category-filter${selectedCertificationCategories.length === 0 ? ' is-active' : ''}`}
+              aria-pressed={selectedCertificationCategories.length === 0}
+              onClick={() => setSelectedCertificationCategories([])}
+            >
+              All
+            </button>
+            {certificationCategories.map((category) => (
+              <button
+                type="button"
+                className={`category-filter${selectedCertificationCategories.includes(category) ? ' is-active' : ''}`}
+                aria-pressed={selectedCertificationCategories.includes(category)}
+                key={category}
+                onClick={() => toggleCategory(selectedCertificationCategories, setSelectedCertificationCategories, category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
           <div className="certifications-grid">
-            {certifications.map((cert, idx) => (
-              <div className="cert-card" key={idx}>
+            {visibleCertifications.map((cert) => (
+              <div className="cert-card" key={cert.title}>
                 <div className="cert-image-wrap">
                   <img src={cert.image} alt={cert.title} className="cert-image" />
                 </div>
@@ -325,6 +390,11 @@ export default function Profile() {
                   <span className="cert-date">{cert.date}</span>
                   <h4 className="cert-title">{cert.title}</h4>
                   <p className="cert-from">From: {cert.issuer}</p>
+                  <div className="item-category-list" aria-label={`${cert.title} categories`}>
+                    {cert.categories.map((category) => (
+                      <span className="item-category-tag" key={category}>{category}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

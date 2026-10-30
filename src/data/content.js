@@ -138,6 +138,7 @@ export const projects = [
   {
     name: "Health Drift",
     tag: "Machine Learning · FastAPI",
+    categories: ["AI & Machine Learning", "Backend & APIs", "Cloud Deployment", "Automation & CI/CD"],
     desc: "Developed a machine learning application using a Random Forest classifier to predict disease categories from structured symptom data. Built a FastAPI inference service and integrated Evidently AI to monitor data drift and generate reports. A scheduled GitHub Actions workflow handles model training and drift monitoring; the API is deployed on Render.",
     stack: ["Python", "Scikit-learn", "Pandas", "FastAPI", "Evidently AI", "Joblib", "GitHub Actions", "Render"],
     iconKeys: ["python"],
@@ -147,6 +148,7 @@ export const projects = [
   {
     name: "AIRWay",
     tag: "Final Year Project · AR Navigation",
+    categories: ["Mobile Development", "Augmented Reality"],
     desc: "A final-year project focused on indoor navigation within Centaurus Mall, Islamabad. The app uses an augmented-reality approach to help users navigate complex indoor spaces, alongside a web companion for route and store management.",
     stack: ["Flutter", "Dart", "Augmented Reality (AR)", "Firebase", "Google Maps API"],
     iconKeys: ["flutter", "dart", "firebase", "googlemaps"],
@@ -156,6 +158,7 @@ export const projects = [
   {
     name: "Hand Gesture Controlled Car Game",
     tag: "Python · Computer Vision",
+    categories: ["AI & Machine Learning", "Computer Vision", "Game Development"],
     desc: "Developed an interactive car game controlled by hand gestures captured through a webcam. Used computer vision and hand-tracking to translate movements into game controls for a touch-free experience.",
     stack: ["Python", "OpenCV", "MediaPipe", "Pygame", "NumPy"],
     iconKeys: ["python"],
@@ -165,6 +168,7 @@ export const projects = [
   {
     name: "Rescue App",
     tag: "Flutter · Outdoor Navigation & Safety",
+    categories: ["Mobile Development"],
     desc: "A mobile application for hikers, climbers, and outdoor enthusiasts, with GPS-enabled navigation, offline maps, real-time location tracking, and emergency SOS functionality. Firebase provides authentication and cloud data management, while local storage supports offline access. Additional features include weather alerts, step tracking, and health metrics.",
     stack: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore", "Hive", "GPS", "Google Maps", "Flutter Map"],
     iconKeys: ["flutter", "dart", "firebase", "googlemaps"],
@@ -174,6 +178,7 @@ export const projects = [
   {
     name: "Meet9ja",
     tag: "Flutter · Communication · Payments",
+    categories: ["Mobile Development"],
     desc: "Worked on a Flutter-based social and communication mobile application, integrating ZEGOCLOUD communication services and Flutterwave payment processing into the app experience.",
     stack: ["Flutter", "Dart", "Flutterwave", "ZEGOCLOUD"],
     iconKeys: ["flutter", "dart", "firebase", "cloud"],
@@ -183,6 +188,7 @@ export const projects = [
   {
     name: "Glow Care",
     tag: "MERN · E-commerce",
+    categories: ["Web Development"],
     desc: "An e-commerce platform with a full admin panel — RESTful APIs with secure authentication and a React admin panel for product/order management.",
     stack: ["MongoDB", "Express", "React", "Node.js"],
     iconKeys: ["mongodb", "express", "react", "nodejs"],
@@ -192,6 +198,7 @@ export const projects = [
   {
     name: "Pet Finder",
     tag: "Android · Kotlin",
+    categories: ["Mobile Development"],
     desc: "An Android app streamlining pet discovery and adoption, backed by Firebase and the PetFinder API.",
     stack: ["Kotlin", "Firebase", "PetFinder API", "MVC"],
     iconKeys: ["kotlin", "firebase", "androidstudio"],
@@ -201,6 +208,7 @@ export const projects = [
   {
     name: "Safety App",
     tag: "Flutter · TFLite",
+    categories: ["Mobile Development", "AI & Machine Learning"],
     desc: "An emergency-assistance app for women with live location sharing, shake gestures, and on-device facial recognition.",
     stack: ["Flutter", "Firebase", "TFLite", "Facial Recognition"],
     iconKeys: ["flutter", "dart", "firebase", "tensorflow"],
@@ -253,60 +261,70 @@ export const certifications = [
     title: "Intermediate Python",
     issuer: "DataCamp",
     date: "30 Aug 2025",
+    categories: ["Programming", "AI & Machine Learning"],
     image: certIntermediatePython,
   },
   {
     title: "Understanding Cloud Computing",
     issuer: "DataCamp",
     date: "23 Feb 2025",
+    categories: ["Cloud Computing"],
     image: certCloudComputing,
   },
   {
     title: "Introduction to Python",
     issuer: "DataCamp",
     date: "29 Jan 2025",
+    categories: ["Programming", "AI & Machine Learning"],
     image: certIntroPython,
   },
   {
     title: "What is Data Science?",
     issuer: "IBM · Coursera",
     date: "Jan 2024",
+    categories: ["AI & Machine Learning"],
     image: certDataScience,
   },
   {
     title: "Introduction to Dart",
     issuer: "Google Cloud · Coursera",
     date: "Jul 2023",
+    categories: ["Mobile Development"],
     image: certIntroDart,
   },
   {
     title: "Material Components for Flutter Basics",
     issuer: "Google Cloud · Coursera",
     date: "Apr 2023",
+    categories: ["Mobile Development", "UI Development"],
     image: certFlutterMaterial,
   },
   {
     title: "Relational Database Design",
     issuer: "University of Colorado Boulder · Coursera",
     date: "Apr 2023",
+    categories: ["Databases"],
     image: certDatabaseDesign,
   },
   {
     title: "AI For Everyone",
     issuer: "DeepLearning.AI · Coursera",
     date: "Apr 2023",
+    categories: ["AI & Machine Learning"],
     image: certAIForEveryone,
   },
   {
     title: "Getting Started with Flutter Development",
     issuer: "Google Cloud · Coursera",
     date: "Mar 2023",
+    categories: ["Mobile Development"],
     image: certGettingStartedFlutter,
   },
   {
     title: "Foundations of Project Management",
     issuer: "Google · Coursera",
     date: "Mar 2023",
+    categories: ["Project Management"],
     image: certProjectManagement,
   },
 ]

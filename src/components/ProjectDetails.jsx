@@ -23,6 +23,13 @@ export default function ProjectDetails({ project }) {
         <header className="project-detail-header">
           <span className="project-detail-tag">{project.tag}</span>
           <h1>{project.name}</h1>
+          {project.categories?.length > 0 && (
+            <div className="project-detail-categories" aria-label={`${project.name} categories`}>
+              {project.categories.map((category) => (
+                <span key={category}>{category}</span>
+              ))}
+            </div>
+          )}
           <p>{project.desc}</p>
           {project.supervisor && (
             <p className="project-detail-supervisor">

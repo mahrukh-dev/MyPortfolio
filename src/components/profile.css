@@ -869,6 +869,54 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 5%;
 }
 
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+}
+
+.category-filter {
+  border: 1px solid rgba(42, 32, 20, 0.2);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--color-dark-brown);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.category-filter:hover,
+.category-filter.is-active {
+  border-color: var(--color-green);
+  background: var(--color-green);
+  color: var(--color-cream);
+}
+
+.item-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.item-category-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: rgba(42, 32, 20, 0.08);
+  color: var(--color-dark-brown);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-content > .item-category-list {
+  margin: -4px 0 12px;
+}
+
 
 .projects-grid {
   display: grid;
@@ -1072,6 +1120,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 40px;
 }
 
+.certifications-section .category-filters {
+  margin-top: 0;
+}
+
 .cert-card {
   background-color: white;
   border-radius: 8px;
@@ -1128,6 +1180,10 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(42, 32, 20, 0.75);
   font-weight: 500;
   margin: 0;
+}
+
+.cert-info .item-category-list {
+  margin-top: 6px;
 }
 
 /* ==========================================
