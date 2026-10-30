@@ -2,7 +2,6 @@
 import certIntermediatePython from '../assets/certificates/IntermediatePython_DataCamp_30Aug2025.jpg';
 import certCloudComputing from '../assets/certificates/UnderstandingCloudComputing_DataCamp_23Feb2025.jpg';
 import certIntroPython from '../assets/certificates/IntroductionToPython_DataCamp_29Jan2025.jpg';
-import certCommunication from '../assets/certificates/CommunicationInThe21stCenturyWorkspace_UCIDivisionOfContinuingEducation_19Jan2024.jpg';
 import certDataScience from '../assets/certificates/WhatIsDataScience_IBM_19Jan2024.jpg';
 import certIntroDart from '../assets/certificates/IntroductionToDart_GoogleCloud_11July2023.jpg';
 import certFlutterMaterial from '../assets/certificates/MaterialComponentsForFlutterBasics_GoogleCloud_18April2023.jpg';
@@ -16,14 +15,15 @@ import profileImage from '../assets/profile/my_profile.png';
 
 export const profile = {
   name: "Mah Rukh",
-  role: "Flutter Developer & Full-Stack Software Engineer (MERN)",
-  location: "Islamabad, Pakistan",
+  role: "Senior Software Developer · Flutter & Full-Stack Engineer",
+  location: "Rawalpindi, Pakistan",
   email: "mahrukhdev@gmail.com",
   phone: "+92 330 9890516",
   linkedin: "linkedin.com/in/mahrukh928",
   github: "github.com/mahrukh-dev",
+  website: "https://mahrukh.asteriqhub.com/",
   summary:
-    "Software Engineer with 3+ years of experience building cross-platform mobile applications using Flutter/Dart and full-stack web solutions with the MERN stack. Currently leading a cross-functional development team, managing Agile sprint planning, code reviews, and CI/CD workflows while delivering client-facing products end-to-end.",
+    "Senior Software Developer with 3+ years of experience building cross-platform mobile applications with Flutter and full-stack web solutions with React, Node.js, and Express. Leads cross-functional teams, coordinates Agile delivery, mentors developers, and works directly with clients to turn requirements into reliable products.",
 }
 
 export const stats = [
@@ -35,7 +35,7 @@ export const stats = [
 
 // Small badge pills shown over the portrait — edit freely.
 export const badges = [
-  { label: "Islamabad, Pakistan" },
+  { label: "Rawalpindi, Pakistan" },
   { label: "3+ Yrs Experience" },
 ]
 
@@ -43,30 +43,11 @@ export const badges = [
 export const portraitImage = profileImage;
 
 export const skillGroups = [
-  {
-    title: "Languages",
-    items: ["Dart", "JavaScript", "Kotlin", "Java", "C++", "C#", "Python", "SQL", "HTML", "CSS", "XML"],
-  },
-  {
-    title: "Mobile Development",
-    items: ["Flutter", "React Native", "Native Android (Kotlin/Java)"],
-  },
-  {
-    title: "Frontend",
-    items: ["React.js", "Next.js", "Vite", "Tailwind CSS", "Blazor"],
-  },
-  {
-    title: "Backend",
-    items: ["Node.js", "Express.js", ".NET", "RESTful APIs", "GraphQL"],
-  },
-  {
-    title: "Databases & Cloud",
-    items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Supabase", "AWS S3"],
-  },
-  {
-    title: "Tools & Architectures",
-    items: ["Git/GitHub", "Docker", "CI/CD (GitHub Actions)", "REST", "Bloc", "Provider", "MVC / MVVM"],
-  }
+  { title: "Programming", items: ["Dart", "Kotlin", "JavaScript", "Java", "Python", "SQL", "CSS", "HTML"] },
+  { title: "Mobile Development", items: ["Flutter", "Native Android (Kotlin, Java)", "React Native", "State Management", "Riverpod", "GetX", "Provider", "Bloc"] },
+  { title: "Web Development", items: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "RESTful APIs"] },
+  { title: "Database & Cloud", items: ["MongoDB", "PostgreSQL", "AWS S3", "Firestore", "Firebase Authentication", "Firebase Storage", "Realtime Database", "Supabase", "Azure", "Microsoft SQL Server (MSSQL)", "MySQL", "SQLite"] },
+  { title: "Architecture & Engineering", items: ["MVP", "MVC", "MVVM", "Clean Code", "Clean Architecture", "SOLID Principles", "GitHub", "Git", "JIRA", "Agile Project Management", "Scrum Meetings & Communication", "Code Review", "CI/CD"] },
 ]
 
 // Icon keys map to react-icons/si components in src/utils/icons.js —
@@ -78,23 +59,24 @@ export const toolIcons = [
 
 export const experience = [
   {
-    org: "Smart Call Solutions Pvt Ltd",
+    org: "Smart Call Solutions (Pvt) Ltd",
     role: "Senior Software Developer",
-    period: "May 2026 – Present",
+    location: "Rawalpindi, Pakistan",
+    period: "31 May 2026 – Present",
     stack: "MERN · Flutter · Dart · Firebase · MVVM · Agile/JIRA · GitHub · OAuth · JWT Authentication",
     points: [
-      "Lead a cross-functional team of 5 developers, 2 designers, and 2 SEO specialists, managing sprint planning, task allocation, and QA to consistently hit on-time delivery targets.",
-      "Supervise mobile and web application development using Flutter, React, Node.js, and Express.js across multiple concurrent client projects.",
-      "Conducted technical interviews and mentored junior developers through structured code reviews, raising adherence to clean MVVM/MVC/Clean architecture standards across the team.",
-      "Integrate REST APIs and optimize application performance, improving scalability and maintainability of production applications.",
-      "Serve as primary technical point of contact for clients — gathering requirements, delivering progress updates, and translating business needs into technical specifications."
+      "Lead a cross-functional team of 5 developers, 2 designers, and 2 SEO specialists through sprint planning, task allocation, and QA.",
+      "Supervise Flutter, React, Node.js, and Express.js development across concurrent client projects.",
+      "Conduct technical interviews and mentor junior developers through code reviews, promoting clean MVVM, MVC, and Clean Architecture standards.",
+      "Act as the main technical contact for clients: gather requirements, report progress, and write technical specifications."
     ],
-    projects: "Zentera Tech, United Taxis, Smart Call Solutions, TeleSolutions Call Central",
+    projects: "Zentera Tech, United Taxis, Ashford Taxis, Smart Call Solutions, TeleSolutions Call Central",
   },
   {
-    org: "Smart Call Solutions Pvt Ltd",
-    role: "Web Developer",
-    period: "Sep 2025 – Apr 2026",
+    org: "Smart Call Solutions (Pvt) Ltd",
+    role: "Web Programmer",
+    location: "Rawalpindi, Pakistan",
+    period: "1 Sep 2025 – 31 May 2026",
     stack: "MERN · MVVM · GitHub",
     points: [
       "Built and maintained frontend and backend features for enterprise client applications using the MERN stack.",
@@ -103,29 +85,32 @@ export const experience = [
     projects: "LeatherHood Ecommerce, Ashford Premier Taxi",
   },
   {
-    org: "CareCloud (Remote)",
-    role: "Flutter Developer (Intern)",
-    period: "May 2025 – Jun 2025",
+    org: "CareCloud",
+    role: "IT Intern – Flutter Developer",
+    location: "Rawalpindi, Pakistan",
+    period: "1 May 2025 – 30 Jun 2025",
     stack: "Flutter · Dart · Firebase · MVVM · Provider · Hive · Riverpod",
     points: [
-      "Built scalable Flutter applications using clean MVVM architecture for CareCloud's mobile health platform.",
-      "Developed healthcare mobile applications using clean MVVM architecture with Provider state management. Implemented secure patient data handling compliant with healthcare standards. Built school management features including attendance tracking and grade reporting with Hive local storage."
+      "Built Flutter apps for a mobile health platform using MVVM and Provider, with secure patient data handling.",
+      "Built school management features for attendance tracking and grade reporting with Hive local storage."
     ],
   },
   {
-    org: "Technofies (Islamabad)",
-    role: "IT Instructor",
-    period: "Apr 2024 – Apr 2025",
-    stack: "Programming · Azure",
+    org: "Technofies",
+    role: "IT Instructor – Microsoft Azure & AI",
+    location: "Islamabad, Pakistan",
+    period: "1 Feb 2024 – 28 Feb 2025",
+    stack: "Programming · Microsoft Azure · AI",
     points: [
-      "Delivered hands-on programming and Azure training sessions to student cohorts using project-based learning.",
-      "Designed and maintained course content aligned with current industry standards and practical, real-world skills."
+      "Taught programming and Azure to student cohorts through project-based learning.",
+      "Designed and maintained course content."
     ],
   },
   {
-    org: "Stella Technology (Islamabad)",
-    role: "Summer Intern",
-    period: "Jul 2023 – Aug 2023",
+    org: "Stella Technology",
+    role: "Summer Intern – Mobile Developer",
+    location: "Islamabad, Pakistan",
+    period: "10 Jul 2023 – 31 Aug 2023",
     stack: "Kotlin · Android · GitHub · APIs · Material Design",
     points: [
       "Developed native Android applications in Kotlin, integrating third-party APIs and Material Design guidelines.",
@@ -151,30 +136,49 @@ export const getProjectSlug = (name) =>
 
 export const projects = [
   {
-    name: "Rescue App",
-    tag: "Flutter · Firebase · Geolocator",
-    desc: "A safety-focused navigation app for hikers: real-time location tracking, emergency SOS alerts, GPS trail routing with offline maps, weather + wildlife alerts, and step/BMI health tracking.",
-    stack: ["Flutter", "Firebase", "Google Sign-In", "flutter_map", "Hive"],
-    iconKeys: ["flutter", "dart", "firebase", "googlemaps"],
-    image: "https://placehold.co/640x420/151a22/9099a8?text=Rescue+App&font=raleway",
-    link: "https://github.com/mahrukh-dev/rescue_app_flutter.git",
-  },
-  {
-    name: "Meet9ja",
-    tag: "Flutter · Zego · AWS S3",
-    desc: "A Tinder-style dating app with location-based matchmaking, in-app audio/video calling, cloud media storage, push notifications, and in-app purchases.",
-    stack: ["Flutter", "Firebase", "Zego", "Geolocator", "AWS S3"],
-    iconKeys: ["flutter", "dart", "firebase", "cloud"],
-    image: "https://placehold.co/640x420/151a22/9099a8?text=Meet9ja&font=raleway",
+    name: "Health Drift",
+    tag: "Machine Learning · FastAPI",
+    desc: "Developed a machine learning application using a Random Forest classifier to predict disease categories from structured symptom data. Built a FastAPI inference service and integrated Evidently AI to monitor data drift and generate reports. A scheduled GitHub Actions workflow handles model training and drift monitoring; the API is deployed on Render.",
+    stack: ["Python", "Scikit-learn", "Pandas", "FastAPI", "Evidently AI", "Joblib", "GitHub Actions", "Render"],
+    iconKeys: ["python"],
+    image: "https://placehold.co/640x420/151a22/9099a8?text=Health+Drift&font=raleway",
+    link: "https://github.com/mahrukh-dev/health-drift-project",
   },
   {
     name: "AIRWay",
-    tag: "Final Year Project · AR",
-    desc: "A real-time indoor AR navigation app for Centaurus Mall, plus a Firebase-backed web companion for route and store management.",
-    stack: ["Flutter", "AR", "Firebase", "Google Maps API"],
+    tag: "Final Year Project · AR Navigation",
+    desc: "A final-year project focused on indoor navigation within Centaurus Mall, Islamabad. The app uses an augmented-reality approach to help users navigate complex indoor spaces, alongside a web companion for route and store management.",
+    stack: ["Flutter", "Dart", "Augmented Reality (AR)", "Firebase", "Google Maps API"],
     iconKeys: ["flutter", "dart", "firebase", "googlemaps"],
     image: "https://placehold.co/640x420/151a22/9099a8?text=AIRWay&font=raleway",
-    link: "https://github.com/javeeriiaaa/airway.git",
+    supervisor: "Ms. Warda Aslam",
+  },
+  {
+    name: "Hand Gesture Controlled Car Game",
+    tag: "Python · Computer Vision",
+    desc: "Developed an interactive car game controlled by hand gestures captured through a webcam. Used computer vision and hand-tracking to translate movements into game controls for a touch-free experience.",
+    stack: ["Python", "OpenCV", "MediaPipe", "Pygame", "NumPy"],
+    iconKeys: ["python"],
+    image: "https://placehold.co/640x420/151a22/9099a8?text=Hand+Gesture+Car+Game&font=raleway",
+    link: "https://github.com/mahrukh-dev/HandGestureCarGame",
+  },
+  {
+    name: "Rescue App",
+    tag: "Flutter · Outdoor Navigation & Safety",
+    desc: "A mobile application for hikers, climbers, and outdoor enthusiasts, with GPS-enabled navigation, offline maps, real-time location tracking, and emergency SOS functionality. Firebase provides authentication and cloud data management, while local storage supports offline access. Additional features include weather alerts, step tracking, and health metrics.",
+    stack: ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore", "Hive", "GPS", "Google Maps", "Flutter Map"],
+    iconKeys: ["flutter", "dart", "firebase", "googlemaps"],
+    image: "https://placehold.co/640x420/151a22/9099a8?text=Rescue+App&font=raleway",
+    link: "https://github.com/mahrukh-dev/rescue_app_flutter",
+  },
+  {
+    name: "Meet9ja",
+    tag: "Flutter · Communication · Payments",
+    desc: "Worked on a Flutter-based social and communication mobile application, integrating ZEGOCLOUD communication services and Flutterwave payment processing into the app experience.",
+    stack: ["Flutter", "Dart", "Flutterwave", "ZEGOCLOUD"],
+    iconKeys: ["flutter", "dart", "firebase", "cloud"],
+    image: "https://placehold.co/640x420/151a22/9099a8?text=Meet9ja&font=raleway",
+    link: "https://github.com/mahrukh-dev/Meet9ja",
   },
   {
     name: "Glow Care",
@@ -207,27 +211,40 @@ export const projects = [
 export const leadership = [
   {
     org: "AUCIS — Air University Computing & Innovation Society",
-    role: "Vice President (2024–Present) · Lead, Women in Computing (2023–2024)",
+    role: "Vice President (2025) · Lead, Women in Computing (2023–2024)",
     desc: "Led a 100-member team organizing events and coding competitions (Code Royale, Code Champs) drawing 200+ attendees.",
   },
   {
     org: "RAAS — Robotics & Automation Society",
-    role: "Executive Secretary (2024–Present) · Lead, Software Team (2023–2024)",
+    role: "Executive Secretary (2025) · Lead, Software Team (2023–2024)",
     desc: "Directed a software team building automation solutions for robotics projects, alongside maintaining events with up to 400 attendees.",
   },
   {
-    org: "GDGoC Air University",
-    role: "Lead, Women in Tech (2024–Present)",
+    org: "Google Developer Groups on Campus (GDGoC), Air University",
+    role: "Lead, Women in Tech (2024)",
     desc: "Organized Code Air Extended, drawing 300+ female attendees.",
   },
 ]
 
 export const education = {
-  degree: "B.S. Computer Science",
-  school: "Air University, Islamabad",
+  degree: "Bachelor of Science in Computer Science",
+  school: "Air University, Islamabad, Pakistan",
   period: "2021 – 2025",
   cgpa: "3.18",
+  gradingScale: "4.00",
+  language: "English",
+  website: "https://www.au.edu.pk/",
   coursework: "Data Structures, Algorithms, Database Systems, Mobile App Development, Web Technologies, Software Engineering",
+  finalYearProject: {
+    name: "AIRWay",
+    description: "A real-time indoor AR navigation app for Centaurus Mall, with a web companion for route and store management.",
+    supervisor: "Ms. Warda Aslam",
+    stack: ["Flutter", "Dart", "Augmented Reality (AR)", "Firebase", "Google Maps API"],
+  },
+  previousEducation: [
+    { school: "Westminster International School", qualification: "A Levels", period: "2019 – 2021", location: "Rawalpindi, Pakistan" },
+    { school: "Beaconhouse Educational Complex", qualification: "O Levels", period: "2017 – 2019", location: "Islamabad, Pakistan" },
+  ],
 }
 
 // Each certification is sorted from latest to oldest
@@ -235,29 +252,23 @@ export const certifications = [
   {
     title: "Intermediate Python",
     issuer: "DataCamp",
-    date: "Aug 2025",
+    date: "30 Aug 2025",
     image: certIntermediatePython,
   },
   {
     title: "Understanding Cloud Computing",
     issuer: "DataCamp",
-    date: "Feb 2025",
+    date: "23 Feb 2025",
     image: certCloudComputing,
   },
   {
     title: "Introduction to Python",
     issuer: "DataCamp",
-    date: "Jan 2025",
+    date: "29 Jan 2025",
     image: certIntroPython,
   },
   {
-    title: "Communication in the 21st Century Workspace",
-    issuer: "UC Irvine Division of Continuing Education · Coursera",
-    date: "Jan 2024",
-    image: certCommunication,
-  },
-  {
-    title: "What is Data Science",
+    title: "What is Data Science?",
     issuer: "IBM · Coursera",
     date: "Jan 2024",
     image: certDataScience,

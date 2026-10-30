@@ -105,13 +105,33 @@ export default function Profile() {
                     <GraduationCap className="star-bullet" size={16} style={{ flexShrink: 0 }} /> {education.period}
                   </div>
                   <div className="timeline-content">
-                    <h4>{education.school}</h4>
-                    <p>{education.degree} (CGPA: {education.cgpa})</p>
+                    <h4>
+                      <a href={education.website} target="_blank" rel="noreferrer">
+                        {education.school}
+                      </a>
+                    </h4>
+                    <p>{education.degree} (CGPA: {education.cgpa}/{education.gradingScale})</p>
+                    <p>Language of instruction: {education.language}</p>
                     <p className="coursework">
                       <strong>Coursework:</strong> {education.coursework}
                     </p>
+                    <div className="education-project">
+                      <strong>Final-year project: {education.finalYearProject.name}</strong>
+                      <p>{education.finalYearProject.description}</p>
+                      <p><strong>Technologies:</strong> {education.finalYearProject.stack.join(" · ")}</p>
+                      <p><strong>Supervisor:</strong> {education.finalYearProject.supervisor}</p>
+                    </div>
                   </div>
                 </div>
+                {education.previousEducation.map((item) => (
+                  <div className="timeline-item" key={item.qualification}>
+                    <div className="timeline-year">{item.period}</div>
+                    <div className="timeline-content">
+                      <h4>{item.qualification}</h4>
+                      <p>{item.school} · {item.location}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -126,7 +146,9 @@ export default function Profile() {
                     </div>
                     <div className="exp-content">
                       <h4>{exp.role}</h4>
-                      <h5 className="exp-org">{exp.org}</h5>
+                      <h5 className="exp-org">
+                        {exp.org}{exp.location && ` · ${exp.location}`}
+                      </h5>
                       <p className="exp-stack">{exp.stack}</p>
                       <ul className="exp-points">
                         {exp.points.map((pt, pIdx) => (

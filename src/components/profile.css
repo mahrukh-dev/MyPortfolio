@@ -468,6 +468,20 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(42, 32, 20, 0.75);
 }
 
+.education-project {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 14px;
+  border-left: 3px solid var(--color-terracotta);
+  background: rgba(42, 32, 20, 0.04);
+  font-size: 13px;
+}
+
+.education-project > strong {
+  color: var(--color-dark-brown);
+}
+
 /* Overlapping Experience Box (Slightly shifts left & up to feel dynamically layered) */
 .experience-box {
   background-color: var(--color-yellow);

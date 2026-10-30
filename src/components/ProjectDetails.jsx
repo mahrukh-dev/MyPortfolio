@@ -24,6 +24,11 @@ export default function ProjectDetails({ project }) {
           <span className="project-detail-tag">{project.tag}</span>
           <h1>{project.name}</h1>
           <p>{project.desc}</p>
+          {project.supervisor && (
+            <p className="project-detail-supervisor">
+              <strong>Project supervisor:</strong> {project.supervisor}
+            </p>
+          )}
         </header>
 
         {project.stack?.length > 0 && (

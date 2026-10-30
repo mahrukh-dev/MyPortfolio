@@ -57,6 +57,11 @@
   line-height: 1.75;
 }
 
+.project-detail-header .project-detail-supervisor {
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
 .project-detail-tech {
   margin-bottom: 44px;
 }

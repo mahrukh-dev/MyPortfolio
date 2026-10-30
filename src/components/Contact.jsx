@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { profile } from '../data/content.js'
-import { Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react'
+import { Mail, Phone, Linkedin, Github, MapPin, Globe } from 'lucide-react'
 import './Contact.css'
 
 export default function Contact() {
@@ -67,6 +67,17 @@ export default function Contact() {
                 <span>GitHub</span>
                 <a href={`https://${profile.github}`} target="_blank" rel="noreferrer">
                   {profile.github}
+                </a>
+              </div>
+            </li>
+            <li className="contact-item">
+              <div className="contact-icon-wrapper">
+                <Globe size={18} />
+              </div>
+              <div className="contact-text">
+                <span>Portfolio</span>
+                <a href={profile.website} target="_blank" rel="noreferrer">
+                  mahrukh.asteriqhub.com
                 </a>
               </div>
             </li>
